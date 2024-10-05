@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import JobsPage from './components/pages/JobsPage.js';
+import BookmarksPage from './components/pages/BookmarksPage.js';
+import JobDetailsPage from './components/pages/JobDetailsPage.js';
+import BottomNavBar from './components/BottomNavBar.js';
+import Loader from './components/Loader.js';
+import NotFoundPage from './components/pages/NotFoundPage.js';
+import HomePage from './components/pages/HomePage.js';
+import ErrorBoundary from './components/ErrorBoundary.js'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+       <ErrorBoundary>
+      <div className=" relative min-h-screen  pb-20"//bottomnav
+      > 
+        <Routes>
+        <Route path="/" element={<HomePage />} />
+          <Route path="/jobs" element={<JobsPage />} />
+          <Route path="/loader" element={<Loader />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/jobs/:jobId" element={<JobDetailsPage />} /> 
+          <Route path="*" element={<NotFoundPage />} /> 
+        </Routes>
+        <BottomNavBar />
+      </div>
+      </ErrorBoundary>
+    </Router>
   );
 }
 

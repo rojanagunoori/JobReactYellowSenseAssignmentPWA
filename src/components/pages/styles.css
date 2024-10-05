@@ -1,0 +1,116 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .job-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .job-location,
+  .job-salary {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .bookmark-button, .dismiss-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .bookmark-button:hover, .dismiss-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .dismiss-button {
+    background-color: #dc3545;
+  }
+  
+  .dismiss-button:hover {
+    background-color: #c82333;
+  }
+  /* styles.css */
+.container {
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.job-card {
+  pointer-events: auto; 
+  background-color: white;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  max-width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-card:hover {
+  transform: scale(1.05);
+  border-color: #4f46e5; /* rainbow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.job-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.job-details {
+  color: #374151; /* gray-700 */
+  margin-bottom: 8px;
+}
+
+.link {
+  color: #3b82f6; /* blue-500 */
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.link:hover {
+  background-color: #e5e7eb; /* gray-200 */
+  padding: 4px;
+  transform: scale(1.05);
+}
+
+.load-more {
+  background-color: #3b82f6; /* blue-500 */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.load-more:hover {
+  background-color: #2563eb; /* blue-600 */
+}
