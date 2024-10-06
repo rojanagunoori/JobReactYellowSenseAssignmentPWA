@@ -8,9 +8,20 @@ function JobDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const location = useLocation();
+  console.log(location)
+ // let job
+ useEffect(() => {
+  if (location?.state === null) {
+    setError('No Data Found');
+    setLoading(false);
+    return;
+  }
+}, [location?.state]);
+
+const  job  = location?.state?.job || []
+
   
-  const { job } = location.state || {};
-console.log(job,job==undefined)
+console.log(job,job===undefined)
 
 
 
@@ -28,8 +39,19 @@ setLoading(false);
 return <p>No job details available</p>;
 }
 },[])
-  if (job==undefined) {
+  if (job===undefined) {
     return <NoPage/>
+  }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!job) {
+    return <NoPage />;
   }
 
 
@@ -277,7 +299,7 @@ const parseLine = (line) => {
       <p><strong>Experience:</strong> {decodedExperience}</p>
       <p><strong>Shift Timing:</strong> {decodedShiftTiming}</p>
       <p><strong>Job Role:</strong> {decodedJobRole}</p>
-      <p><strong>Salary:</strong> {job?.salary_min===null?"-":job?.salary_min=="-"?"-":`₹${job?.salary_min}`} - {job?.salary_max=="-"?"-":`₹${job?.salary_max}`}</p>
+      <p><strong>Salary:</strong> {job?.salary_min===null?"-":job?.salary_min==="-"?"-":`₹${job?.salary_min}`} - {job?.salary_max==="-"?"-":`₹${job?.salary_max}`}</p>
       <p><strong>Location:</strong> {decodedCityLocation}, {decodedLocality}</p>
       <p><strong>Premium Till:</strong> {formattedPremiumDate}</p>
     </div>

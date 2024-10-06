@@ -203,7 +203,7 @@ function JobsPage() {
    // console.log("Matching Jobs: ", matchingJobs);
   }, [jobs])
   
-
+  console.log("ERRROR 6")
   return (
     <div className="p-4 mb-5">
       <h1 className="text-2xl font-bold mb-4">Jobs</h1>

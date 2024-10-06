@@ -7,6 +7,7 @@ import Loader from './components/Loader.js';
 import NotFoundPage from './components/pages/NotFoundPage.js';
 import HomePage from './components/pages/HomePage.js';
 import ErrorBoundary from './components/ErrorBoundary.js'; 
+import JobDetailsTesting from './components/pages/JobDetailsTesting.js';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path="/jobs" element={<JobsPage />} />
           <Route path="/loader" element={<Loader />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
-          <Route path="/jobs/:jobId" element={<JobDetailsPage />} /> 
+          { /* <Route path="/jobs/:jobId" element={<JobDetailsTesting />} /> */}
+        <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
           <Route path="*" element={<NotFoundPage />} /> 
         </Routes>
         <BottomNavBar />
